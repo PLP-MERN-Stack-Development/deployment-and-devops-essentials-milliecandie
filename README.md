@@ -1,8 +1,8 @@
 # Week 7 MERN Deployment Assignment
 
 ## 🌍 Deployed Links
-- Frontend: https://your-vercel-url.vercel.app
-- Backend API: https://your-render-url.onrender.com
+- Frontend: 
+- Backend API: 
 
 ## 🗂 Folder Structure
 mern-deployment-week7/
