@@ -32,7 +32,14 @@ This project demonstrates how to deploy a **full MERN application** with CI/CD, 
 - Logging implemented with `morgan`.
 - Uptime monitoring planned with UptimeRobot.
 
----
+---## 🌐 Deployment URLs
+Frontend : 
+
+## 📸 CI/CD Pipeline
+Include a screenshot of your GitHub Actions running successfully.
+
+## 🧠 Monitoring
+Currently using console monitoring (logs) via Render dashboard and GitHub Actions logs.
 
 
 
