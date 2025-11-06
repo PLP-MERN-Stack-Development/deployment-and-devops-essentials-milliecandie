@@ -34,9 +34,7 @@ This project demonstrates how to deploy a **full MERN application** with CI/CD, 
 
 ---
 
-## 🌍 Deployment Links
-Frontend: https://your-frontend.vercel.app  
-Backend: https://your-backend.onrender.com  
+
 
 ---
 
@@ -45,7 +43,7 @@ Backend: https://your-backend.onrender.com
 - **Backend:** Express.js, Node.js  
 - **Database:** MongoDB  
 - **CI/CD:** GitHub Actions  
-- **Deployment:** Vercel & Render  
+   
 
 ---
 
