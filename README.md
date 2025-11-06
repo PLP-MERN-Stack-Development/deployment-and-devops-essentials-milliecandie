@@ -33,7 +33,7 @@ This project demonstrates how to deploy a **full MERN application** with CI/CD, 
 - Uptime monitoring planned with UptimeRobot.
 
 ---## 🌐 Deployment URLs
-Frontend : 
+Frontend : https://plp-mern-stack-development.github.io/deployment-and-devops-essentials-milliecandie/
 
 ## 📸 CI/CD Pipeline
 Include a screenshot of your GitHub Actions running successfully.
