@@ -1,0 +1,16 @@
+body {
+  background-color: #f9fafb;
+  font-family: Arial, sans-serif;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  padding: 2rem;
+}
+
+h1 {
+  color: #0078ff;
+}

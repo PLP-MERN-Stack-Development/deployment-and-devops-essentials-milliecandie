@@ -1,31 +1,67 @@
-# Week 7 MERN Deployment Assignment
+# 🚀 Week 7: MERN Deployment and DevOps Essentials
 
-## 🌍 Deployed Links
-- Frontend: 
-- Backend API: 
+## 📘 Overview
+This project demonstrates how to deploy a **full MERN application** with CI/CD, environment configuration, monitoring, and maintenance setup.
 
-## 🗂 Folder Structure
-mern-deployment-week7/
- ├── backend/
- ├── frontend/
- └── .github/workflows/
+---
+
+## ⚙️ Tasks Completed
+### ✅ Task 1: Preparing for Deployment
+- Optimized React build for production.
+- Configured environment variables (.env and .env.example).
+- Implemented logging and error handling in Express.js.
+- Added secure HTTP headers using Helmet.
+
+### ✅ Task 2: Backend Deployment
+- Backend deployed on **Render**.
+- Environment variables configured.
+- HTTPS and logging enabled.
+- Health check endpoint implemented.
+
+### ✅ Task 3: Frontend Deployment
+- Frontend deployed on **Vercel**.
+- Build settings configured.
+- Continuous deployment from GitHub enabled.
+
+### ✅ Task 4: CI/CD Pipeline
+- GitHub Actions workflow configured.
+- Automated testing and build pipeline added.
+
+### ✅ Task 5: Monitoring & Maintenance
+- `/health` endpoint added.
+- Logging implemented with `morgan`.
+- Uptime monitoring planned with UptimeRobot.
+
+---
+
+## 🌍 Deployment Links
+Frontend: https://your-frontend.vercel.app  
+Backend: https://your-backend.onrender.com  
+
+---
+
+## 🧰 Tech Stack
+- **Frontend:** React, CSS  
+- **Backend:** Express.js, Node.js  
+- **Database:** MongoDB  
+- **CI/CD:** GitHub Actions  
+- **Deployment:** Vercel & Render  
+
+---
 
 ## ⚙️ Environment Variables
-See `.env.example` file.
+Create a `.env` file in `backend` folder:
 
-## 🚀 Deployment
-- Backend → Render  
-- Frontend → Vercel  
-- CI/CD → GitHub Actions
+## 🧪 Monitoring
+- **Health Endpoint:** `/health`
+- **Logging:** Morgan & console logging
+- **Uptime Monitoring:** Render Dashboard / UptimeRobot
+- **Performance Tracking:** Browser DevTools
 
-## 🩺 Monitoring Setup
-- **Health Check:** `/` endpoint
-- **Express Status Monitor:** `/status`
-- **Logging:** Winston logs (console + server.log)
-- **Uptime Monitoring:** Added via UptimeRobot
-- **Performance Tracking:** Express monitor metrics (CPU, memory, response time)
+---
 
-## 📅 Maintenance
-- Schedule database backups on MongoDB Atlas  
-- Keep dependencies updated  
-- Review error logs weekly
+## 📄 Documentation
+- CI/CD: GitHub Actions
+- Deployment: Render (backend), Vercel (frontend)
+- Monitoring: Health checks and uptime monitoring
+- Maintenance: Regular updates, backups, rollback plans

@@ -1,57 +1,58 @@
-import express from "express";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import cors from "cors";
-import helmet from "helmet";
-import morgan from "morgan";
-import statusMonitor from "express-status-monitor";
-import winston from "winston";
+// Import dependencies
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
+const helmet = require("helmet");
+const dotenv = require("dotenv");
 
+// Load environment variables
 dotenv.config();
+
 const app = express();
 
-// 🩺 Express Status Monitor
-app.use(statusMonitor());
-
-// ⚙️ Middlewares
+// Middleware
 app.use(express.json());
 app.use(cors());
 app.use(helmet());
-app.use(morgan("combined"));
+app.use(morgan("dev"));
 
-// 💚 Health check endpoint
+// Basic route for testing
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "✅ Backend API running successfully" });
+  res.send("Backend server is running successfully 🚀");
 });
 
-// 🧩 MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => logger.info("MongoDB connected successfully"))
-.catch(err => logger.error("Database connection failed: " + err));
-
-// 🪵 Winston Logger
-const logger = winston.createLogger({
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: "server.log" })
-  ],
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.simple()
-  )
+// API route to connect with frontend
+app.get("/api/hello", (req, res) => {
+  res.json({ message: "Hello from Backend!" });
 });
 
-// Example route to test logging
-app.get("/test-log", (req, res) => {
-  logger.info("Test log entry created successfully");
-  res.send("Log entry created successfully ✅");
+// Health check route for monitoring
+app.get("/api/health", (req, res) => {
+  res.status(200).json({
+    status: "UP",
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString(),
+  });
 });
 
-// Start server
+// Simulated database connection (for now you can skip MongoDB)
+const connectDB = async () => {
+  try {
+    console.log("🟢 Database connected (placeholder, MongoDB not yet configured)");
+  } catch (error) {
+    console.error("🔴 Database connection failed:", error.message);
+  }
+};
+connectDB();
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error("Error:", err.stack);
+  res.status(500).json({ message: "Something went wrong on the server." });
+});
+
+// Server start
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT}`);
+  console.log(`🚀 Server running in ${process.env.NODE_ENV || "development"} mode on port ${PORT}`);
 });
